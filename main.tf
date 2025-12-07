@@ -8,6 +8,13 @@ terraform {
       source  = "hashicorp/random"
       version = "3.7.2"
     }
+
+  }
+  backend "azurerm" {
+    resource_group_name  = "StorageRG"
+    storage_account_name = "taskboardstoragedm93"
+    container_name       = "taskboardstoragedm93"
+    key                  = "terraform.tfstate"
   }
 }
 
